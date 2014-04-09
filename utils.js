@@ -1,9 +1,10 @@
 var utils = {}
-var Data = require('ndn-browser-shim').Data
-var Name = require('ndn-browser-shim').Name
-var SignedInfo = require('ndn-browser-shim').SignedInfo
-var ndnbuf = require('ndn-browser-shim').ndnbuf
-var DataUtils = require('ndn-browser-shim').DataUtils
+  , ndn = require('ndn-lib')
+var Data = ndn.Data
+var Name = ndn.Name
+var SignedInfo = ndn.SignedInfo
+var ndnbuf = ndn.ndnbuf
+var DataUtils = ndn.DataUtils
 
 utils.chunkArbitraryData = function(opts) {
   var ndnArray = [];

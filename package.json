@@ -1,0 +1,18 @@
+{
+  "name": "ndn-utils",
+  "version": "0.0.0",
+  "description": "NDN utility functions",
+  "main": "utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rynomad/ndn-utils.git"
+  },
+  "author": "Ryan Bennett",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/rynomad/ndn-utils/issues"
+  }
+}
