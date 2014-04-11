@@ -3,7 +3,7 @@ var utils = {}
 var Data = ndn.Data
 var Name = ndn.Name
 var SignedInfo = ndn.SignedInfo
-var ndnbuf = ndn.ndnbuf
+var ndnbuf = ndn.customBuffer
 var DataUtils = ndn.DataUtils
 
 utils.chunkArbitraryData = function(opts) {
@@ -33,7 +33,7 @@ utils.chunkArbitraryData = function(opts) {
       co.signedInfo.freshnessSeconds = fresh
     }
     co.sign()
-    ndnArray[i] = co.encode()
+    ndnArray[i] = co.wireEncode()
   };
 
   return {array:ndnArray, name: name};
