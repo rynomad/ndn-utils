@@ -30,7 +30,7 @@ utils.chunkArbitraryData = function(opts) {
     co.signedInfo.finalBlockID = utils.initSegment(stringArray.length - 1)
     console.log(co.signedInfo.finalBlockID)
     if (opts.freshness != undefined) {
-      co.signedInfo.freshnessSeconds = opts.freshness
+      co.signedInfo.setFreshnessPeriod(opts.freshness)
     }
     co.sign()
     ndnArray[i] = co.wireEncode()
