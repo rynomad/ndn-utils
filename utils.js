@@ -21,16 +21,16 @@ utils.chunkArbitraryData = function(opts) {
   if (opts.version != false) {
     utils.appendVersion(name, opts.version)
   }
-  var stringArray = string.match(/.{1,4000}/g);
+  var stringArray = string.match(/.{1,1300}/g);
   var segmentNames = [];
   for (i = 0; i < stringArray.length; i++) {
     segmentNames[i] = new Name(name).appendSegment(i)
-    var co = new Data(segmentNames[i], new SignedInfo(), new ndnbuf(stringArray[i]));
+    var co = new Data(segmentNames[i], new SignedInfo(), stringArray[i]);
     co.signedInfo.setFields()
     co.signedInfo.finalBlockID = utils.initSegment(stringArray.length - 1)
     console.log(co.signedInfo.finalBlockID)
     if (opts.freshness != undefined) {
-      co.signedInfo.freshnessSeconds = fresh
+      co.signedInfo.freshnessSeconds = opts.freshness
     }
     co.sign()
     ndnArray[i] = co.wireEncode()
