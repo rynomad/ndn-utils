@@ -28,9 +28,7 @@ utils.chunkArbitraryData = function(opts) {
     var co = new Data(segmentNames[i], new SignedInfo(), stringArray[i]);
     co.signedInfo.setFields()
     co.signedInfo.finalBlockID = utils.initSegment(stringArray.length - 1)
-    console.log(co.signedInfo.finalBlockID)
 
-    console.log('setting freshness', opts.freshness)
     if (opts.freshness != undefined) {
       co.signedInfo.setFreshnessPeriod(opts.freshness)
     }
