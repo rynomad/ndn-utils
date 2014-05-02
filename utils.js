@@ -11,12 +11,7 @@ utils.chunkArbitraryData = function(opts) {
   //console.log(name)
   if (opts.type == 'object') {
     var string = JSON.stringify(opts.thing);
-  } else if (typeof opts.data == 'string') {
-    var string = data;
-  } else if (typeof opts.data == 'file') {
-    //console.log('no handlers yet for datatype: ', typeof data);
-    return;
-  };
+  }
   var name = new ndn.Name(opts.uri)
   if (opts.version != false) {
     utils.appendVersion(name, opts.version)
