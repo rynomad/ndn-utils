@@ -156,7 +156,7 @@ utils.getNameWithoutCommandMarker = function(name) {
 
 
 utils.getSuffix = function(name, p) {
-    return new Name(name.components.slice(p));
+    return new Name().append(new Name.Component(name.components.slice(p)));
 };
 
 utils.appendVersion = function(name, date) {
