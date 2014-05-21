@@ -167,6 +167,8 @@ utils.appendVersion = function(name, date) {
 
       } else if (typeof date == "number")
         var d = new Date().setTime(date)
+      else
+        var d = new Date().getTime()
     } else {
       var d = new Date().getTime();
     };
